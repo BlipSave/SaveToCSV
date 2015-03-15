@@ -25,7 +25,10 @@ $maxPerPageAPI = 200;
 $importTotal = 0;
 $maxNew = 3800;
 
+
+
 $i = 0;
+
 $userEntries = $client->get('user/profile', [
 	'return_details' => 1,
 ]);
@@ -37,10 +40,12 @@ $maxPerPageAPI = min($maxPerPageAPI,$totalImages);
 $pagesNeeded = ceil($totalImages/$maxPerPageAPI);
 /*** Set starting page ***/
 $page = $var_page;
+
 echo "CSV GENERATED - RIGHT CLICK AND SELECT VIEW SOURCE TO SEE THE CSV FILE CONTENTS";
 echo "
 <!--_________COPY BELOW THIS LINE_________________
 ";
+
 echo "Username, date, title, description, tags, lat, lon
 ";
 while($page < $pagesNeeded) {
